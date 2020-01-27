@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${name}"></h1>
+<h1 th:text="${password}"></h1>
+<h1><span th:text="${days}">Not too many</span> more days!</h1>
+
+
+
+<form action="/deimos" method="post">
+    <input type="text" name="name" id="name" class="field" />
+    <input type="text" name="password" id="password" class="field" />
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

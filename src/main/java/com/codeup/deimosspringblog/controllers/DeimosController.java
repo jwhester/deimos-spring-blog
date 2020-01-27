@@ -1,16 +1,26 @@
 package com.codeup.deimosspringblog.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class DeimosController {
 
     @GetMapping("/deimos/{days}")
-    @ResponseBody
-    public String daysLeft(@PathVariable Integer days){
-        return days + " more days until we graduate!";
+    public String daysLeft(@PathVariable Integer days, Model model) {
+        model.addAttribute("days", days);
+        return "deimos";
+    }
+
+    @GetMapping("/deimos")
+    public String deimos() {
+        return "deimos";
+    }
+    @PostMapping("/deimos")
+    public String name(@RequestParam String name, @RequestParam String password, Model model) {
+        model.addAttribute("name", "Welcome " + name + "!");
+        model.addAttribute("password", "Password: " + password);
+        return "deimos";
     }
 }

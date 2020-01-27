@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="partials/header :: head"/>
+<body>
+<form action="/roll-dice" method="post">
+    <h3>Guess a number between 1 and 6:</h3>
+    <h1 th:text="${number}"></h1>
+    <h1 th:text="${random}"></h1>
+    <h1 th:text="${win}" style="color: dodgerblue"></h1>
+    <h1 th:text="${lose}" style="color: red"></h1>
+    <input type="number" name="number" min="1" max="6">
+    <button type="submit">Roll Dice</button>
+</form>
+</body>
+</html>

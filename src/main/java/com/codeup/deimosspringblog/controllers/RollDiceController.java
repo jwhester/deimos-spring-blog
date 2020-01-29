@@ -20,6 +20,7 @@ public class RollDiceController {
         if (random == 0){
             random = 3;
         }
+
         model.addAttribute("number", "You guessed " + number + "!");
         model.addAttribute("random", "The computer rolled a " + random + "!");
         if (number == random){
